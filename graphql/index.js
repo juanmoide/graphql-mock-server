@@ -52,8 +52,15 @@ export const typeDefs = gql`
         AllCompanies: [Company!]!
         AllFinance: [Finance!]!
         AllEmployees: [Employee!]!
+        hello(name: String): String!
     }
 `;
+
+export const resolvers = {
+    Query: {
+      hello: (_, { name }) => `Hello ${name || 'World'}`,
+    },
+  }
 
 export const mocks = {
     Address: () => ({
