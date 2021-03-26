@@ -1,60 +1,55 @@
 import { gql } from 'apollo-server-micro';
 
 export const typeDefs = gql`
-interface AwardData {
-    id: ID!
-    name: String!
-}
+    type Address {
+        id: ID!
+        streetAddress: String!
+        secondaryAddress: String
+        city: String!
+        country: String!
+        zipCode: String!
+        latitude: String!
+        longitude: String!
+    }
 
-type Award implements AwardData {
-    id: ID!
-    name: String!
-}
+    type Finance {
+        id: ID!
+        company: Company!
+        account: String!
+        amount: String!
+        currencyCode: String!
+        cardNumber: String!
+        cardCVV: String!
+        transactionType: String!
+        transactionDescription: String!
+    }
 
-type AwardWon implements AwardData {
-    id: ID!
-    name: String!
-    year: Int!
-    winner: Actor!
-}
+    type Company {
+        id: ID!
+        name: String!
+        year: Int!
+        address: Address!
+        financeData: Finance!
+    }
 
-interface BasicData {
-    id: ID!
-    name: String!
-    age: Int!
-}
+    type Employee {
+        firstName: String!
+        lastName: String!
+        fullName: String!
+        imageUrl: String
+        gender: String
+        email: String!
+        company: Company!
+        jobTitle: String!
+        jobArea: String!
+        jobType: String!
+        jobDescriptor: String
+    }
 
-type People implements BasicData {
-    id: ID!
-    name: String!
-    age: Int!
-}
-
-type Actor implements BasicData {
-    id: ID!
-    name: String!
-    age: Int!
-    films: [Film!]!
-    awards: [AwardWon!]!
-}
-
-
-type Film {
-    id: ID!
-    name: String!
-    director: People!
-    actors: [Actor!]!
-    recommended: Boolean
-}
-
-type Query {
-  allFilms: [Film!]!
-  allActors: [Actor!]!
-  allAwards: [Award!]!
-  allPeople: [People]
-}
-`
-
-// Logs: ype "Interface" is missing a "__resolveType" resolver. Pass false into
-// "resolverValidationOptions.requireResolversForResolveType" to disable this warning.
-// This happends because an interface needs a resolver.
+    type Query{
+        AllAddresses: [Address!]!
+        AllCompanies: [Company!]!
+        AllFinance: [Finance!]!
+        AllEmployees: [Employee!]!
+    }
+`;
