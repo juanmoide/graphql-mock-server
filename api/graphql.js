@@ -1,12 +1,12 @@
 import { ApolloServer } from 'apollo-server-micro';
-import { typeDefs } from '../graphql'
+import { typeDefs, mocks } from '../graphql';
 
 const path = '/api/graphql'
 
 const apolloServer = new ApolloServer({
   typeDefs,
   // Adding mock values
-  mocks: true,
+  mocks,
   context: async ({ req, connection }) => {
     if (connection) {
       // check connection for metadata

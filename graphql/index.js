@@ -1,4 +1,5 @@
 import { gql } from 'apollo-server-micro';
+import faker from 'faker';
 
 export const typeDefs = gql`
     type Address {
@@ -53,3 +54,45 @@ export const typeDefs = gql`
         AllEmployees: [Employee!]!
     }
 `;
+
+export const mocks = {
+    Address: () => ({
+        streetAddress: faker.address.streetAddress(),
+        secondaryAddress: faker.address.secondaryAddress(),
+        city: faker.address.city(),
+        country: faker.address.country(),
+        zipCode: faker.address.zipCode(),
+        latitude: faker.address.latitude(),
+        longitude: faker.address.longitude(),
+    }),
+    Finance: () => ({
+        account: faker.finance.account(),
+        amount: faker.finance.amount(),
+        currencyCode: faker.finance.currencyCode(),
+        cardNumber: faker.finance.creditCardNumber(),
+        cardCVV: faker.finance.creditCardCVV(),
+        transactionType: faker.finance.transactionType(),
+        transactionDescription: faker.finance.transactionDescription()
+    }),
+    Company: () => ({
+        name: faker.fake("{{company.companyName}}, {{company.companySuffix}}"),
+        year: () => faker.random.number({min: 1920, max: 2021})
+    }),
+    Employee: () => {
+        const firstName = faker.name.firstName();
+        const lastName = faker.name.firstName();
+        return {
+            firstName,
+            lastName,
+            fullName: `${lastName}, ${firstName}`,
+            imageUrl: faker.image.imageUrl(),
+            gender: faker.name.gender(),
+            email: faker.internet.email(),
+            jobTitle: faker.name.jobTitle(),
+            jobArea: faker.name.jobArea(),
+            jobType: faker.name.jobType(),
+            jobDescriptor: faker.name.jobDescriptor()
+        }
+    },
+    Int: () => faker.random.number({min: 1})
+}
