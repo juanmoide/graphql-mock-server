@@ -54,3 +54,7 @@ type Query {
   allPeople: [People]
 }
 `
+
+// Logs: ype "Interface" is missing a "__resolveType" resolver. Pass false into
+// "resolverValidationOptions.requireResolversForResolveType" to disable this warning.
+// This happends because an interface needs a resolver.
