@@ -23,7 +23,8 @@
   "homepage": "https://github.com/juanmoide/graphql-vercel-mock-server#readme",
   "dependencies": {
     "apollo-server-micro": "^2.22.1",
-    "faker": "^5.5.0"
+    "faker": "^5.5.0",
+    "graphql": "^15.5.0"
   },
   "devDependencies": {
     "@vercel/node": "^1.9.1",
