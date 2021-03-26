@@ -1,0 +1,31 @@
+{
+  "name": "graphql-mock-server",
+  "version": "1.0.0",
+  "description": "This is an example of GraphQL mock server",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanmoide/graphql-vercel-mock-server.git"
+  },
+  "keywords": [
+    "graphql",
+    "apollo",
+    "apollo-graphql",
+    "apollo-server",
+    "vercel"
+  ],
+  "author": "juanmoide",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanmoide/graphql-vercel-mock-server/issues"
+  },
+  "homepage": "https://github.com/juanmoide/graphql-vercel-mock-server#readme",
+  "dependencies": {
+    "apollo-server-micro": "^2.22.1"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.9.1",
+    "vercel": "^21.3.3"
+  }
+}
