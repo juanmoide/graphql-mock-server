@@ -6,17 +6,12 @@ const typeDefs = `
   }
 `
 
-const resolvers = {
-  Query: {
-    hello: (_, { name }) => `Hello ${name || 'World'}`,
-  },
-}
-
 const path = '/api/graphql'
 
 const apolloServer = new ApolloServer({
   typeDefs,
-  resolvers,
+  // Adding mock values
+  mocks: true,
   context: async ({ req, connection }) => {
     if (connection) {
       // check connection for metadata
