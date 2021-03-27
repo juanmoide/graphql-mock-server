@@ -242,9 +242,9 @@ export const mocks = {
         AllFinance: checkItemsToShow,
         AllEmployees: checkItemsToShow
     }),
-    Address: addressFn,
-    Finance: financeFn,
-    Company: companyFn,
-    Employee: employeeFn,
+    Address: addressFn(),
+    Finance: financeFn(),
+    Company: companyFn(),
+    Employee: employeeFn(),
     Int: () => faker.random.number({min: 1})
 }
