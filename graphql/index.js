@@ -66,7 +66,6 @@ const checkItemsToShow = (_, { min: minimun, max: maximun }) => {
         }
     }
 
-    console.log("MIN", min, "MAX", max)
     return new MockList([min, max]);
 }
 
