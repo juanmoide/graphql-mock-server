@@ -4,7 +4,7 @@
   "description": "This is an example of GraphQL mock server",
   "main": "index.js",
   "scripts": {
-    "doc": "dociql -l DOC-LOGO.jpg -t docs config.yml"
+    "doc": "dociql -l ./static/images/DOC-LOGO.jpg -t docs config.yml"
   },
   "repository": {
     "type": "git",
