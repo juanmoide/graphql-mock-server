@@ -32,7 +32,6 @@ const companyFn = () => (replaceDataObj = {}) => ({
 const employeeFn = () => (replaceDataObj = {}) => {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
-    console.log(replaceDataObj)
     return {
         firstName,
         lastName,
