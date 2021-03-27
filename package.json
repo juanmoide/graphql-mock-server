@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "This is an example of GraphQL mock server",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "doc": "dociql -l DOC-LOGO.jpg -t docs config.yml"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/juanmoide/graphql-vercel-mock-server.git"
@@ -28,6 +30,7 @@
   },
   "devDependencies": {
     "@vercel/node": "^1.9.1",
+    "dociql": "^1.1.4",
     "vercel": "^21.3.3"
   }
 }
